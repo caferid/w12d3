@@ -59,6 +59,15 @@ app.post("/users",(req,res)=>{
     user.save()
     res.send({message:"User Created"})
 })
+// all post
+app.post("/users/all", async (req,res)=>{
+    try{
+        await Users.create(req.body)
+        res.send('creatrd')
+    }catch(error){
+        res.send(' no creatrd')
+    }
+})
 
 
 //normal put id'ye gore
